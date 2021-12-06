@@ -1,0 +1,8 @@
+{
+  "login_page": {
+    "welcome": "Welcome back!",
+    "subTitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor",
+    "forgot": "Forgot your password?",
+    "button_text": "Login"
+  }
+}
