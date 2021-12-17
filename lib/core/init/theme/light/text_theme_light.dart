@@ -14,6 +14,7 @@ class TextThemeLight{
     final TextStyle headline3 = TextStyle(fontSize: 48, fontWeight: FontWeight.w400);
     final TextStyle headline4 = TextStyle(fontSize: 30, fontWeight: FontWeight.w400, letterSpacing: 0.25);
     final TextStyle headline5 = TextStyle(fontSize: 24, fontWeight: FontWeight.w400);
+    final TextStyle headline6 = TextStyle(fontSize: 16, fontWeight: FontWeight.w400);
     final TextStyle overLine = TextStyle(fontSize: 10, fontWeight: FontWeight.w400, letterSpacing: 1.5);
 
 }

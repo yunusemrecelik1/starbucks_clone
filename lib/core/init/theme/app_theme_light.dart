@@ -16,6 +16,15 @@ class AppThemeLight extends AppTheme with ILightTheme {
   ThemeData get theme => ThemeData(
         colorScheme: _appColorScheme(),
         textTheme: textTheme(),
+        inputDecorationTheme: InputDecorationTheme(
+            labelStyle: textThemeLight.headline6.copyWith(color: colorSchemeLight.darkGray),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: colorSchemeLight.darkGray),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: colorSchemeLight.darkGray),
+            ),
+        ),
         // tabBarTheme: TabBarTheme(
         //   labelPadding: insets.lowPaddingAll,
         //   unselectedLabelStyle:
@@ -34,6 +43,7 @@ class AppThemeLight extends AppTheme with ILightTheme {
       headline3: textThemeLight.headline3,
       headline4: textThemeLight.headline4,
       headline5: textThemeLight.headline5,
+      headline6: textThemeLight.headline6,
       overline: textThemeLight.overLine,
     );
   }
@@ -42,15 +52,15 @@ class AppThemeLight extends AppTheme with ILightTheme {
     return ColorScheme(
       primary: colorSchemeLight.primaryGreen,
       primaryVariant: colorSchemeLight.secondaryGreen,
-      secondary: Colors.green,
+      secondary: colorSchemeLight.mainGreen, //xx
       secondaryVariant: Colors.black,
       surface: colorSchemeLight.azure,
       background: Color(0xfff6f9fc),
       error: Colors.red[900],
       onPrimary: Colors.greenAccent,
       onSecondary: colorSchemeLight.gray, //xx
-      onSurface: Colors.purple.shade300,
-      onBackground: Colors.black12,
+      onSurface: colorSchemeLight.darkGray, //xx
+      onBackground: Colors.white, //xx
       onError: Color(0xffffc93c), //xx
       brightness: Brightness.light,
     );

@@ -26,25 +26,59 @@ class LoginView extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Spacer(flex: 2),
-                  Expanded(child: Align(alignment:Alignment.centerLeft,child: Image.asset(ImageConstants.instance.starbucks))),
+                  Spacer(flex: 3),
+                  Expanded(child: Align(alignment: Alignment.centerLeft, child: Image.asset(ImageConstants.instance.starbucks))),
+                  Spacer(),
                   Expanded(
                     child: Text(
                       LocaleKeys.login_page_welcome.tr(),
                       style: context.textTheme.headline4.copyWith(color: context.colors.onSecondary).copyWith(fontWeight: FontWeight.w600),
                     ),
                   ),
-                  Expanded(child: Text(LocaleKeys.login_page_subTitle.tr(),style: context.textTheme.subtitle2,)),
-                  TextField(),
-                  TextField(),
-                  Text(LocaleKeys.login_page_forgot.tr()),
+                  Expanded(
+                      child: Text(
+                    LocaleKeys.login_page_subTitle.tr(),
+                    style: context.textTheme.subtitle2,
+                  )),
+                  Spacer(),
+                  Container(
+                    color: context.colors.onBackground,
+                    padding: context.paddingLowVertical,
+                    child: TextField(
+                      //controller: controller,
+                      decoration: InputDecoration(
+                        labelText: 'Email',
+                      ),
+                    ),
+                  ),
+                  Container(
+                    color: context.colors.onBackground,
+                    padding: context.paddingLowVertical,
+                    child: TextField(
+                      //controller: controller,
+                      decoration: InputDecoration(
+                          labelText: 'Password',
+                          suffixIcon: Icon(Icons.visibility)
+                      ),
+                    ),
+                  ),
+                  Spacer(),
+                  Align(alignment: Alignment.centerRight,child: Text(LocaleKeys.login_page_forgot.tr(),style: context.textTheme.headline6.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),)),
+                  Spacer(),
                   SizedBox(
                       width: 1000,
                       child: RaisedButton(
+                        padding: context.paddingNormal,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(5)),
+                        ),
+                        color: context.colors.secondary,
                         onPressed: () {},
-                        child: Text(LocaleKeys.login_page_button_text.tr()),
+                        child: Text(LocaleKeys.login_page_button_text.tr(),style: context.textTheme.headline6.copyWith(color: context.colors.onBackground),),
                       )),
-                  Spacer(flex: 6),
+                  Spacer(flex: 4),
                 ],
               ),
             )
