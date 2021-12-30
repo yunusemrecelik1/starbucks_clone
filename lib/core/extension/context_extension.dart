@@ -1,6 +1,7 @@
 // Flutter imports:
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 extension ContextExtension on BuildContext{
@@ -47,6 +48,11 @@ extension PaddingExtensionSymetric on BuildContext {
       EdgeInsets.symmetric(horizontal: mediumValue);
   EdgeInsets get paddingHighHorizontal =>
       EdgeInsets.symmetric(horizontal: highValue);
+}
+
+extension PaddingExtensionOnly on BuildContext {
+  EdgeInsets get paddingLowBottom =>
+      EdgeInsets.only(bottom: lowValue);
 }
 
 extension PageExtension on BuildContext {

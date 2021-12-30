@@ -1,7 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import 'package:starbucks_clone/view/home/bottom_navigation_bar/view/bottom_navigation_bar_view.dart';
+import 'package:starbucks_clone/view/home/home/view/home_view.dart';
 import 'core/constants/app/app_constants.dart';
 import 'core/init/cache/locale_manager.dart';
 import 'core/init/lang/language_manager.dart';
@@ -34,8 +35,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: Provider.of<ThemeNotifier>(context,listen: false).currentTheme,
-      onGenerateRoute: NavigationRoute.instance.generateRoute,
-      navigatorKey: NavigationService.instance.navigatorKey,
+      // onGenerateRoute: NavigationRoute.instance.generateRoute,
+      // navigatorKey: NavigationService.instance.navigatorKey,
+      home: BottomNavigationBarPage(),
     );
   }
 }

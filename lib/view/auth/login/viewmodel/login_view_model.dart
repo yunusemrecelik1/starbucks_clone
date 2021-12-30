@@ -16,7 +16,6 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
   ILoginService loginService;
   TextEditingController emailController;
   TextEditingController passwordController;
-
   void setContext(BuildContext context) => this.context = context;
 
   void init() {
