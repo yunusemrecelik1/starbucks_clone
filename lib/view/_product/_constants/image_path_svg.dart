@@ -9,4 +9,5 @@ class SVGImagePaths {
   SVGImagePaths._init();
 
   final loginBgSVG = 'login_bg'.toSVG;
+  final starBucksCardLogo = 'sb_card_logo'.toSVG;
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:starbucks_clone/core/base/view/base_widget.dart';
+import 'package:starbucks_clone/core/extension/context_extension.dart';
 import 'package:starbucks_clone/view/home/home/viewmodel/home_view_model.dart';
 
 class HomeView extends StatelessWidget {
@@ -13,16 +14,17 @@ class HomeView extends StatelessWidget {
         model.setContext(context);
       },
       onPageBuilder: (context, HomeViewModel value) => Scaffold(
+        floatingActionButton: FloatingActionButton(child: IconButton(icon: Icon(Icons.add),onPressed: (){})),
         appBar: AppBar(
           title: Text('Starbucks'),
           actions: [
             Padding(
-              padding: const EdgeInsets.only(right:20.0),
+              padding: context.paddingNormalRight,
               child: Row(
                 children: [
-                  Icon(Icons.add_a_photo),
-                  SizedBox(width: 15),
-                  Icon(Icons.remove),
+                  Icon(Icons.notifications_none_sharp,color: context.colors.primary,),
+                  SizedBox(width: context.normalValue),
+                  Icon(Icons.more_vert,color: context.colors.primary),
                 ],
               ),
             )
