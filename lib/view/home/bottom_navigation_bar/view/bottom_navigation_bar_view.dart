@@ -9,11 +9,11 @@ import 'package:starbucks_clone/view/home/order/view/order_page_view.dart';
 import 'package:starbucks_clone/view/home/payment/payment_page.dart';
 
 class BottomNavigationBarPage extends StatelessWidget {
-  const BottomNavigationBarPage({Key key}) : super(key: key);
+  const BottomNavigationBarPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BaseView(
+    return BaseView<BottomNavigationBarViewModel>(
       viewModel: BottomNavigationBarViewModel(),
       onModelReady: (model) {
         model.setContext(context);
@@ -78,7 +78,7 @@ class BottomNavigationBarPage extends StatelessWidget {
     );
   }
 
-  Widget buildIcon({@required BottomNavigationBarViewModel value, @required int pageIndex, @required IconData icon, @required BuildContext context}) {
+  Widget buildIcon({required BottomNavigationBarViewModel value, required int pageIndex, required IconData icon, required BuildContext context}) {
     return Observer(builder: (_) {
       return InkWell(
           onTap: () {

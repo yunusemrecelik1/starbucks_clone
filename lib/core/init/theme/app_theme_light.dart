@@ -40,12 +40,12 @@ class AppThemeLight extends AppTheme with ILightTheme {
 
   InputDecorationTheme inputDecorationTheme() {
     return InputDecorationTheme(
-        labelStyle: textThemeLight.headline6.copyWith(color: colorSchemeLight.darkGray),
+        labelStyle: textThemeLight?.headline6.copyWith(color: colorSchemeLight?.darkGray),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: colorSchemeLight.darkGray),
+          borderSide: BorderSide(color: colorSchemeLight!.darkGray),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: colorSchemeLight.darkGray),
+          borderSide: BorderSide(color: colorSchemeLight!.darkGray),
         ),
       );
   }
@@ -64,7 +64,7 @@ class AppThemeLight extends AppTheme with ILightTheme {
 
   TextTheme primaryTextTheme() {
     return TextTheme(
-      headline6: TextStyle(color: colorSchemeLight.primaryGreen, fontWeight: FontWeight.w600, fontSize: 20),
+      headline6: TextStyle(color: colorSchemeLight?.primaryGreen, fontWeight: FontWeight.w600, fontSize: 20),
     );
   }
 
