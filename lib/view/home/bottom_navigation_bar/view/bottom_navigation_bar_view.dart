@@ -52,8 +52,8 @@ class BottomNavigationBarPage extends StatelessWidget {
     return BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(context.width * 0.3),
-            topRight: Radius.circular(context.width * 0.3),
+            topLeft: Radius.circular(context.width * 0.1),
+            topRight: Radius.circular(context.width * 0.1),
           ),
           boxShadow: [
             BoxShadow(

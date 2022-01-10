@@ -18,25 +18,30 @@ class HomeView extends StatelessWidget {
           onPressed: () {  },
           child: Icon(Icons.add),
         ),
-        appBar: AppBar(
-          title: Text('Starbucks'),
-          actions: [
-            Padding(
-              padding: context.paddingNormalRight,
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.notifications_none_sharp,
-                    color: context.colors.primary,
-                  ),
-                  SizedBox(width: context.normalValue),
-                  Icon(Icons.more_vert, color: context.colors.primary),
-                ],
-              ),
-            )
-          ],
-        ),
+        appBar: buildAppBar(context),
       ),
     );
+  }
+
+  AppBar buildAppBar(BuildContext context) {
+    return AppBar(
+        title: Text('Starbucks'),
+        centerTitle: false,
+        actions: [
+          Padding(
+            padding: context.paddingNormalRight,
+            child: Row(
+              children: [
+                Icon(
+                  Icons.notifications_none_sharp,
+                  color: context.colors.primary,
+                ),
+                SizedBox(width: context.normalValue),
+                Icon(Icons.more_vert, color: context.colors.primary),
+              ],
+            ),
+          )
+        ],
+      );
   }
 }
