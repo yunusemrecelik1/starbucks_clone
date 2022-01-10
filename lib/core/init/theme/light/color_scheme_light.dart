@@ -13,7 +13,7 @@ class ColorSchemeLight{
     final Color mainGreen = Color(0xff4AA366);
     final Color lightGreen = Color(0xff5AAE8A);
     final Color primaryLightGreen = Color(0xffDDF1E9);
-
+    final Color backgroundColor = Color(0xffF7F8FA);
     final Color red = Color(0xffc10e0e);
     final Color white = Color(0xffffffff);
     final Color gray = Color(0xff2E2D38);
