@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 
 class TextThemeLight{
-    static TextThemeLight _instance;
-    static TextThemeLight get instance {
+    static TextThemeLight? _instance;
+    static TextThemeLight? get instance {
     if(_instance == null) _instance = TextThemeLight._init();
     return _instance;
     }
