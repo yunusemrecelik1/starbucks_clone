@@ -11,7 +11,7 @@ import 'package:easy_localization/easy_localization.dart';
 class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BaseView(
+    return BaseView<LoginViewModel>(
       viewModel: LoginViewModel(),
       onModelReady: (model) {
         model.setContext(context);
@@ -57,14 +57,14 @@ class LoginView extends StatelessWidget {
     return Expanded(
         child: Align(
             alignment: Alignment.centerLeft,
-            child: Image.asset(ImageConstants.instance.starbucks)));
+            child: Image.asset(ImageConstants.instance!.starbucks)));
   }
 
   Expanded buildWelcomeTitle(BuildContext context) {
     return Expanded(
       child: Text(
         LocaleKeys.login_page_welcome.tr(),
-        style: context.textTheme.headline4
+        style: context.textTheme.headline4!
             .copyWith(color: context.colors.onSecondary)
             .copyWith(fontWeight: FontWeight.w600),
       ),
@@ -103,7 +103,7 @@ class LoginView extends StatelessWidget {
             controller: model.passwordController,
             decoration: InputDecoration(
               labelText: 'Password',
-              suffixIcon: FlatButton(
+              suffixIcon: TextButton(
                 onPressed: (){
                   model.isLockChange();
                 },
@@ -127,7 +127,7 @@ class LoginView extends StatelessWidget {
         alignment: Alignment.centerRight,
         child: Text(
           LocaleKeys.login_page_forgot.tr(),
-          style: context.textTheme.headline6.copyWith(
+          style: context.textTheme.headline6!.copyWith(
             fontWeight: FontWeight.w600,
           ),
         ));
@@ -137,12 +137,14 @@ class LoginView extends StatelessWidget {
     return SizedBox(
       width: context.width,
         child: Observer(builder: (_) {
-          return RaisedButton(
-            padding: context.paddingNormal,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(5)),
+          return ElevatedButton(
+            style: ButtonStyle(
+              padding: MaterialStateProperty.all(context.paddingNormal),
+              shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(5)),
+              ),),
+              backgroundColor: MaterialStateProperty.all(context.colors.secondary),
             ),
-            color: context.colors.secondary,
             onPressed: model.isLoading
                 ? null
                 : () {
@@ -150,7 +152,7 @@ class LoginView extends StatelessWidget {
                   },
             child: Text(
               LocaleKeys.login_page_button_text.tr(),
-              style: context.textTheme.headline6
+              style: context.textTheme.headline6!
                   .copyWith(color: context.colors.onBackground),
             ),
           );

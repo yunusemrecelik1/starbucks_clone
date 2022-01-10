@@ -6,5 +6,5 @@ abstract class ILoginService {
   final INetworkManager manager;
 
   ILoginService(this.manager);
-  Future<LoginResponseModel> fetchUserControl(LoginModel model);
+  Future<LoginResponseModel?> fetchUserControl(LoginModel model);
 }

@@ -6,7 +6,7 @@ import 'package:starbucks_clone/core/init/theme/app_theme_light.dart';
 import '../../constants/enums/app_theme_enum.dart';
 
 class ThemeNotifier extends ChangeNotifier {
-  ThemeData _currentTheme = AppThemeLight.instance.theme;
+  ThemeData _currentTheme = AppThemeLight.instance!.theme;
   ThemeData get currentTheme => _currentTheme;
   void changeValue(AppThemes theme) {
     if (theme == AppThemes.LIGHT) {

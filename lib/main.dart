@@ -15,11 +15,11 @@ Future<void> main() async {
   await _init();
   runApp(
     MultiProvider(
-      providers: [...ApplicationProvider.instance.dependItems],
+      providers: [...ApplicationProvider.instance!.dependItems],
       child: EasyLocalization(
-        supportedLocales: LanguageManager.instance.supportedLocales,
+        supportedLocales: LanguageManager.instance!.supportedLocales,
         path: ApplicationConstants.LANG_ASSET_PATH,
-        startLocale: LanguageManager.instance.trLocale,
+        startLocale: LanguageManager.instance!.trLocale,
         child: MyApp(),
       ),
     ),
@@ -34,10 +34,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: Provider.of<ThemeNotifier>(context,listen: false).currentTheme,
-      // onGenerateRoute: NavigationRoute.instance.generateRoute,
-      // navigatorKey: NavigationService.instance.navigatorKey,
-      home: BottomNavigationBarPage(),
+      theme: context.watch<ThemeNotifier>().currentTheme,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      onGenerateRoute: NavigationRoute.instance.generateRoute,
+      navigatorKey: NavigationService.instance.navigatorKey,
     );
   }
 }

@@ -5,7 +5,7 @@ import 'package:starbucks_clone/core/constants/enums/locale_keys_enum.dart';
 class LocaleManager {
   static LocaleManager _instance = LocaleManager._init();
 
-  SharedPreferences _preferences;
+  SharedPreferences? _preferences;
   static LocaleManager get instance => _instance;
 
   LocaleManager._init() {
@@ -21,15 +21,15 @@ class LocaleManager {
   }
 
   Future<void> clearAll() async {
-    await _preferences.clear();
+    await _preferences!.clear();
   }
   ///TOKENİ ALIP BURAYA KAYDEDECEĞİZ
   Future<void> setStringValue(PreferencesKeys key, String value) async {
-    await _preferences.setString(key.toString(), value);
+    await _preferences!.setString(key.toString(), value);
   }
 
   Future<void> setBoolValue(PreferencesKeys key, bool value) async {
-    await _preferences.setBool(key.toString(), value);
+    await _preferences!.setBool(key.toString(), value);
   }
 
 }

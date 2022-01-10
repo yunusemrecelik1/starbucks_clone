@@ -3,7 +3,7 @@ import 'package:starbucks_clone/core/init/cache/locale_manager.dart';
 import 'package:starbucks_clone/core/init/navigation/navigation_service.dart';
 
 abstract class BaseViewModel {
-  BuildContext context;
+  BuildContext? context;
 
   LocaleManager localeManager = LocaleManager.instance;
   NavigationService navigation = NavigationService.instance;

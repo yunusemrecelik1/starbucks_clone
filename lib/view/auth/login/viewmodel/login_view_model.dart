@@ -13,13 +13,13 @@ class LoginViewModel = _LoginViewModelBase with _$LoginViewModel;
 
 abstract class _LoginViewModelBase with Store, BaseViewModel {
   GlobalKey<ScaffoldState> scaffoldState = GlobalKey();
-  ILoginService loginService;
-  TextEditingController emailController;
-  TextEditingController passwordController;
+  late ILoginService loginService;
+  TextEditingController? emailController;
+  TextEditingController? passwordController;
   void setContext(BuildContext context) => this.context = context;
 
   void init() {
-    loginService = LoginService(VexanaManager.instance.networkManager);
+    loginService = LoginService(VexanaManager.instance!.networkManager);
     emailController = TextEditingController();
     passwordController = TextEditingController();
   }
@@ -34,12 +34,12 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
   Future<void> fetchLoginService() async {
     isLoadingChange();
       final response = await loginService.fetchUserControl(
-          LoginModel(email:emailController.text.toString(), password:passwordController.text.toString()));
+          LoginModel(email:emailController!.text.toString(), password:passwordController!.text.toString()));
       if (response != null) {
-        if (scaffoldState.currentState != null) {
-          scaffoldState.currentState.showSnackBar(SnackBar(content: Text(response.token)));
+        if (scaffoldState.currentState != null && context != null) {
+          ScaffoldMessenger.of(context!).showSnackBar(SnackBar(content: Text(response.token!)));
         }
-        await localeManager.setStringValue(PreferencesKeys.TOKEN, response.token);
+        await localeManager.setStringValue(PreferencesKeys.TOKEN, response.token!);
       }
     isLoadingChange();
   }

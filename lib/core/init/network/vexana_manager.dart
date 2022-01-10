@@ -1,9 +1,9 @@
 import 'package:vexana/vexana.dart';
 
 class VexanaManager {
-  static VexanaManager _instance;
+  static VexanaManager? _instance;
 
-  static VexanaManager get instance {
+  static VexanaManager? get instance {
     if (_instance == null) _instance = VexanaManager._init();
     return _instance;
   }
