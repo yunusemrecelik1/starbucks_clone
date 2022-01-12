@@ -53,8 +53,14 @@ extension PaddingExtensionSymetric on BuildContext {
 extension PaddingExtensionOnly on BuildContext {
   EdgeInsets get paddingLowBottom =>
       EdgeInsets.only(bottom: lowValue);
+  EdgeInsets get paddingLowLeft =>
+      EdgeInsets.only(left: lowValue);
+  EdgeInsets get paddingLowTop =>
+      EdgeInsets.only(top: lowValue);
   EdgeInsets get paddingNormalRight =>
       EdgeInsets.only(right: normalValue);
+  EdgeInsets get paddingMediumBottom =>
+      EdgeInsets.only(bottom: mediumValue);
 }
 
 extension PageExtension on BuildContext {
