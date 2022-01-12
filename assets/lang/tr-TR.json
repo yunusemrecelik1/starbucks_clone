@@ -4,5 +4,8 @@
     "subTitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor",
     "forgot": "Forgot your password?",
     "button_text": "Login"
+  },
+  "home_page": {
+    "all_money": "Toplam Param"
   }
 }
