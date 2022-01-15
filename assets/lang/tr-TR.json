@@ -6,6 +6,9 @@
     "button_text": "Login"
   },
   "home_page": {
-    "all_money": "Toplam Param"
+    "all_money": "Toplam Param",
+    "add_money": "Yükleme yap",
+    "star_balance": "Yıldız Bakiyesi",
+    "free_drink": "İkram İçecek"
   }
 }

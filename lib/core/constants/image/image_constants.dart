@@ -9,6 +9,8 @@ class ImageConstants {
   ImageConstants._init();
 
   String get starbucks => toPng("starbucks");
+  String get coffee_1 => toPng("coffee_1");
+  String get coffee_2 => toPng("coffee_2");
 
   String toPng(String name) => "assets/images/$name.png";
 }
