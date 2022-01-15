@@ -28,3 +28,9 @@ flutter pub get
 
 Bu proje mobx ve easy localization içermektedir. Komutları scripts dosyasında bulabilirsiniz. 
 
+**Uygulamadan bazı görüntüler:**
+
+<p float="left">
+<img src="https://user-images.githubusercontent.com/56693466/149633065-654ac0da-e73e-4151-838e-83c33c25eec6.png" height="750">
+<img src="https://user-images.githubusercontent.com/56693466/149633162-3db975da-6fe6-4f82-a9a0-b100ba95bc06.png" height="750">
+</p>
