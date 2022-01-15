@@ -21,4 +21,5 @@ class ColorSchemeLight{
     final Color darkGray = Color(0xff676870);
     final Color black = Color(0xff020306);
     final Color azure = Color(0xff27928d);
+    final Color gold = Color(0xffC1A063);
 }
